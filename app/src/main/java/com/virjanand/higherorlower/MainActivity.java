@@ -20,14 +20,16 @@ public class MainActivity extends AppCompatActivity {
                         .getText()
                         .toString());
 
+        String message;
         if (guessedNumber > randomNr) {
-            Toast.makeText(this, "Lower", Toast.LENGTH_SHORT).show();
+            message = "Lower";
         } else if (guessedNumber < randomNr) {
-            Toast.makeText(this, "Higher", Toast.LENGTH_SHORT).show();
+            message = "Higher";
         } else {
-            Toast.makeText(this, "You won!", Toast.LENGTH_SHORT).show();
+            message = "You got it!";
             randomNr = getRandomNr();
         }
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
 
     @Override
